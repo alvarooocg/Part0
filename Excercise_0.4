@@ -1,0 +1,33 @@
+EXERCISE 0.4 => 
+New not Diagram:
+```mermaid
+sequenceNoteDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server-->>browser: 201 Created
+    deactivate server
+
+    Note right of server: The server responses with the state 201 Created, to confirm that it recieved the new note and implemented it in the JSON file.
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: the HTML document
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: the JavaScript file
+    deactivate server
+
+    Note right of browser: The browser starts executing the JavaScript file that fetches the JSON from the server, but till the browser obtains the JSON file no cards are displayed,
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: the content of the JSON file
+    deactivate server
+
+    Note right of browser: Now that the browser has the JSON file, it executes the function that renders the notes, in order to be displayed.
+```
