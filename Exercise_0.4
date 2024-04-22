@@ -1,7 +1,7 @@
 EXERCISE 0.4 => 
-New not Diagram:
+New sequence Diagram:
 ```mermaid
-sequenceNoteDiagram
+sequenceDiagram
     participant browser
     participant server
 
@@ -22,7 +22,7 @@ sequenceNoteDiagram
     server-->>browser: the JavaScript file
     deactivate server
 
-    Note right of browser: The browser starts executing the JavaScript file that fetches the JSON from the server, but till the browser obtains the JSON file no cards are displayed,
+    Note right of browser: The browser starts executing the JavaScript file that fetches the JSON from the server, but till the browser obtains the JSON file no cards are displayed.
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
