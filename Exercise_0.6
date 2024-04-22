@@ -11,6 +11,8 @@ sequenceDiagram
     deactivate server
     
     Note right of server: The server responses with the state 201 Created, to confirm that it recieved the new note and implemented it in the JSON file.
-
+    
+    Note right of browser: The browser only makes one request beacuse the web is a SPA, so instead of making the requests to the server, like when the page is load, it just uses the JavaScript code obtained from the website.
     
 ```
+
