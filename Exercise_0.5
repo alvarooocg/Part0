@@ -1,3 +1,5 @@
+EXERCISE 0.5 =>
+New sequence diagram:
 ```mermaid
 sequenceDiagram
     participant browser
@@ -17,10 +19,13 @@ sequenceDiagram
     activate server
     server-->>browser: the JS file
     deactivate server
+    
+    Note right of browser: The browser starts executing the JavaScript file that fetches the JSON from the server, but till the browser obtains the JSON file no cards are displayed.
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
     server-->>browser: the JSON file
     deactivate server
 
+    Note right of browser: Now that the browser has the JSON file, it executes the function that renders the notes, in order to be displayed.
 ```
